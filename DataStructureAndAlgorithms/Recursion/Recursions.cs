@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DataStructureAndAlgorithms.Recursion
+﻿namespace DataStructureAndAlgorithms.Recursion
 {
     public static class Recursions
     {

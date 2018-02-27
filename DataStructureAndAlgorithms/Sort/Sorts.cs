@@ -38,7 +38,7 @@ namespace DataStructureAndAlgorithms.Sort
                 for (int outer = 0; outer < returnArr.Length; outer++)
                 {
                     var min = outer;
-                    for (int inner = outer; inner < returnArr.Length; inner++)
+                    for (int inner = outer+1; inner < returnArr.Length; inner++)
                     {
                         if (Comperator.Compare(returnArr[min], returnArr[inner]) > 0)
                             min = inner;
@@ -71,6 +71,30 @@ namespace DataStructureAndAlgorithms.Sort
 
 
             return returnArr;
+        }
+
+        public static int FindKthLargest(int[] nums, int k)
+        {
+            var result = -1;
+            for (int outer = 0; outer < nums.Length; outer++)
+            {
+                var temp = outer;
+                for (int inner = outer + 1; inner < nums.Length; inner++)
+                {
+                    if (nums[inner] > nums[temp]) temp = inner;
+                }
+
+                var tempVal = nums[outer];
+                nums[outer] = nums[temp];
+                nums[temp] = tempVal;
+                if (--k == 0)
+                {
+                    result = nums[outer];
+                    break;
+                }
+            }
+
+            return result;
         }
     }
 }

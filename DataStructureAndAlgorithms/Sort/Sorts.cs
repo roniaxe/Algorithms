@@ -31,6 +31,24 @@ namespace DataStructureAndAlgorithms.Sort
             return returnArr;
         }
 
+        public static void BubbleSortWithWhile(T[] arrayToSort)
+        {
+            bool loopAgain = true;
+            for (int outer = arrayToSort.Length - 1; loopAgain && outer >= 0; outer--)
+            {
+                loopAgain = false;
+
+                for (int inner = 0; inner < outer; inner++)
+                {
+                    if (Comperator.Compare(arrayToSort[inner], arrayToSort[inner + 1]) > 0)
+                    {
+                        Swap(arrayToSort, inner, inner + 1);
+                        loopAgain = true;
+                    }
+                }
+            }
+        }
+
         public static T[] SelectionSort(T[] arrayToSort)
         {
             var returnArr = arrayToSort.Clone() as T[];

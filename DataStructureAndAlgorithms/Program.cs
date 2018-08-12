@@ -16,6 +16,8 @@ namespace DataStructureAndAlgorithms
 
             // Sort Algorithms
             var sortedArray = Sorts<int>.BubbleSort(new[] {5, 4, 3, 2, 1});
+            var arr = new[] {7, 3, 2, 8, 3};
+            Sorts<int>.BubbleSortWithWhile(arr);
             var sortedArray2 = Sorts<int>.SelectionSort(new[] {5, 4, 3, 2, 1});
             var sortedArray3 = Sorts<int>.InsertionSort(new[] {5, 4, 3, 2, 1});
             var kthLargest = Sorts<int>.FindKthLargest(new[] { 3, 2, 1, 5, 6, 4 }, 2);
